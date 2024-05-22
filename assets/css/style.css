@@ -440,29 +440,29 @@ body {
         background-position: center center;
     }
     .slide-1{
-        background-image: url(/assets/img/slide/agm.jpg);
+        background-image: url(/zoghorisacco/assets/img/slide/agm.jpg);
         height: 100%;
         width: 100%;
         filter: grayscale(0.5);
     }
     .slide-2{
-        background-image: url(/assets/img/slide/appz.png);
+        background-image: url(/zoghorisacco/assets/img/slide/downloadapp.png);
         height: 100%;
         width: 100%;
         filter: blur(0.6);
     }
     .slide-3{
-        background-image: url(/assets/img/slide/mortgage.webp);
+        background-image: url(/zoghorisacco/assets/img/slide/mortgage.webp);
         height: 100%;
         width: 100%;
     }
     .slide-4{
-        background-image: url(/assets/img/slide/asset.jpg);
+        background-image: url(/zoghorisacco/assets/img/slide/asset.jpg);
         height: 100%;
         width: 100%;
     }
     .slide-5{
-        background-image: url(/assets/img/slide/feeloan.svg);
+        background-image: url(/zoghorisacco/assets/img/slide/feesl.png);
         height: 100%;
         width: 100%;
     }
@@ -599,7 +599,7 @@ body {
             height: 120vh;
         }
     }
-    END OF HERO SECTION */
+    /*END OF HERO SECTION */
 
     /* Request Form */
 

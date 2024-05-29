@@ -26,49 +26,13 @@
     <link href="assets/bcss/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 
 </head>
-
 <body>
-    <!-- Messenger Chat plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "616724945065604");
-        chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                xfbml: true,
-                version: 'v13.0'
-            });
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_GB/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
+   
     <!-- ======= Top Bar ======= -->
     <section id="topbar" class="d-flex alaign-items-center">
-        <!--<div class="container d-flex justify-content-center">
-            <i class="bx bxs-map d-flex align-items-center">
-            <span>MOMBASA,TILU BILU BUILDING, FIRST FLOOR</span></i>
-        </div>-->
         <div class="container d-flex justify-content-center">
             <i class="bx bxs-watch d-flex align-items-center"><span>MON-FRI: 8.00AM-5.00PM | SAT 8.00AM-1.00PM</span></i>
         </div>

@@ -421,14 +421,15 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        /**display: flex;
+        
+        /*display: flex;
         align-items: flex-end;
         justify-content: center;
         position: absolute;
         bottom: 60px;
         top: 70px;
         left: 55px;
-        right: 55px;**/
+        right: 55px;*/
     }
     
     #hero .carousel-item {
@@ -468,7 +469,8 @@ body {
     }
     #hero .carousel-content {
         background: rgba(4, 4, 4, 0.7);
-        /*padding: 20px;*/
+        
+        padding: 20px;
         padding: 5px;
         color: #fff;
         border-top: 5px solid #1bbd36;

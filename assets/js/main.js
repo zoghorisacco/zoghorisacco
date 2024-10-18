@@ -1,9 +1,3 @@
-/**
-* Template Name: Eterna - v4.7.0
-* Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -142,9 +136,14 @@
     }
   });
 
+
+
+  /**carousel hero*/
+  
+
   /**
    * Hero carousel indicators
-   */
+  
   let heroCarouselIndicators = select("#hero-carousel-indicators")
   let heroCarouselItems = select('#heroCarousel .carousel-item', true)
 

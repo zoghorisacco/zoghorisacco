@@ -130,35 +130,46 @@
             <!--<div class="carousel-caption">HOLIDAY SAVINGS</div>-->
         </div>
         <div class="carousel-item">
-            <img src="assets/img/slide/educationloan.png" alt="Slide 3">
+            <img src="assets/img/slide/educationloan.png" alt="Slide 4">
             <!--<div class="carousel-caption">HOLIDAY SAVINGS</div>-->
         </div>
         <div class="carousel-item">
-            <img src="assets/img/slide/holidays.png" alt="Slide 3">
+            <img src="assets/img/slide/holidays.png" alt="Slide 5">
             <!--<div class="carousel-caption">HOLIDAY SAVINGS</div>-->
         </div>
-
+        <div class="carousel-item">
+            <img src="assets/img/slide/csa.png" alt="Slide 5">
+            <!--<div class="carousel-caption">HOLIDAY SAVINGS</div>-->
+        </div>
+    
         <a class="prev" onclick="changeSlide(-1)">❮</a>
         <a class="next" onclick="changeSlide(1)">❯</a>
-        <script>
-            let slideIndex = 0;
-showSlides(slideIndex);
-
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    let slides = document.getElementsByClassName("carousel-item");
-    if (n >= slides.length) { slideIndex = 0 ;}
-    if (n < 0) { slideIndex = slides.length - 1 ;}
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex].style.display = "block";
-}
-        </script>
     </div>
+    
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("carousel-item");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    
+        // Auto-play slides every 20 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 20000);
+    </script>
+    
     <!-- HERO SECTION--
     <section id="hero">
         <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">

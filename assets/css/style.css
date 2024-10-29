@@ -464,10 +464,11 @@ td {
     color: #fff;
 }
 td span {
-	font-size: 15px;
+	font-size: 25px;
 	font-weight: 400;
 	display: inline-block;
 	margin-top: 10px;
+    color: #ff0000;
 }
 
 .button {
@@ -485,7 +486,9 @@ td span {
 td a {
     color: #fff;
 }
-
+td a:hover{
+    color: #fff;
+}
 
     /*HERO SECTION STARTS HERE*
     #hero {
@@ -680,7 +683,7 @@ td a {
     }
     END OF HERO SECTION */
 
-    /*---Request Form---*/
+    /*---Request Form---
     .request-form {
 	background-color: #0000b3;
 	padding: 40px 0px;

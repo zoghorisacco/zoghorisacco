@@ -107,9 +107,7 @@
     }
   }, true)
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
+  /*** Scrool with ofset on links with a class name .scrollto*/
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
@@ -125,9 +123,7 @@
     }
   }, true)
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
+  /*** Scroll with ofset on page load with hash links in the url*/
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
@@ -136,7 +132,40 @@
     }
   });
 
+/**AUTOSCROLL TESTIMONIAL */
+const testimonials = document.querySelector('.testimonial-container');
+let scrollAmount = 0;
 
+function autoScroll() {
+    scrollAmount += testimonials.clientWidth;
+    if (scrollAmount >= testimonials.scrollWidth) {
+        scrollAmount = 0;
+    }
+    testimonials.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+setInterval(autoScroll, 3000);
+
+  /*----Counter Up----*/
+  $(document).ready(function()  {
+    $('.counter-add').each(function ()
+    {
+      $(this).prop('Counter', 0).animate(
+      {
+        Counter: $(this).text()
+      },
+      {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+    });
+  });
 
   /**carousel hero*/
   
@@ -153,9 +182,7 @@
       heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
   });
 
-  /**
-   * Clients Slider
-   */
+  /*** Clients Slider*/
   new Swiper('.clients-slider', {
     speed: 400,
     loop: true,
@@ -189,9 +216,7 @@
     }
   });
 
-  /**
-   * Skills animation
-   */
+  /*** Skills animation*/
   let skilsContent = select('.skills-content');
   if (skilsContent) {
     new Waypoint({
@@ -206,9 +231,7 @@
     })
   }
 
-  /**
-   * Porfolio isotope and filter
-   */
+  /*** Porfolio isotope and filter*/
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
@@ -241,9 +264,7 @@
     selector: '.portfolio-lightbox'
   });
 
-  /**
-   * Portfolio details slider
-   */
+  /*** Portfolio details slider*/
   new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: true,

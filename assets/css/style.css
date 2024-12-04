@@ -683,101 +683,31 @@ td a:hover{
         }
     }
     END OF HERO SECTION */
+/* Request Form */
 
-    /*---Request Form---*/
-    .request-form {
-	background-color: #0000b3;
+.request-form {
+	background-color: #a4c639;
 	padding: 40px 0px;
-	color: #fff;}
-    
-    .request-form h4 {
+	color: #fff;
+}
+
+.request-form h4 {
 	font-size: 22px;
-	font-weight: 600;}
-    
-    .request-form span {
+	font-weight: 600;
+}
+
+.request-form span {
 	font-size: 15px;
 	font-weight: 400;
 	display: inline-block;
-	margin-top: 10px;}
+	margin-top: 10px;
+}
 
-    .request-form a.btn-get-started {
+.request-form a.border-button {
 	margin-top: 12px;
-	float: right;}
-
-    .request-form .btn{
-    background: #cc7606;}
-
-
-
-    /* Call Back Style *
-    .callback-services {
-	border-top: 1px solid #eee;
-	padding-top: 140px;}
-    
-    .contact-us {
-	background-color: #f7f7f7;
-	padding: 140px 0px;}
-    
-    .contact-us .contact-form {
-	background-color: transparent!important;
-	padding: 0!important;}
-    
-    .callback-form {
-	margin-top: 140px;}
-    
-    .callback-form .contact-form {
-	background-color: #a4c639;
-	padding: 60px;
-	border-radius: 5px;
-	text-align: center;}
-    
-    .callback-form .contact-form input {
-	border-radius: 20px;
-	height: 40px;
-	line-height: 40px;
-	display: inline-block;
-	padding: 0px 15px;
-	color: #6a6a6a;
-	font-size: 13px;
-	text-transform: none;
-	box-shadow: none;
-	border: none;
-	margin-bottom: 35px;}
-    
-    .callback-form .contact-form input:focus {
-	outline: none;
-	box-shadow: none;
-	border: none;}
-    
-    .callback-form .contact-form textarea {
-	border-radius: 20px;
-	height: 120px;
-	max-height: 200px;
-	min-height: 120px;
-	display: inline-block;
-	padding: 15px;
-	color: #6a6a6a;
-	font-size: 13px;
-	text-transform: none;
-	box-shadow: none;
-	border: none;
-	margin-bottom: 35px;}
-    
-    .callback-form .contact-form textarea:focus {
-	outline: none;
-	box-shadow: none;
-	border: none;}
-    
-    .callback-form .contact-form ::-webkit-input-placeholder {
-        color: #aaa;}
-        
-    .callback-form .contact-form :-ms-input-placeholder {
-    color: #aaa;}
-  
-  .callback-form .contact-form ::placeholder {
-    color: #aaa;}
-    
-    .callback-form .contact-form button.border-button {
+	float: right;
+}
+.request-form a.border-button {
 	background-color: transparent;
 	color: #fff;
 	border: 2px solid #fff;
@@ -788,37 +718,12 @@ td a:hover{
 	border-radius: 30px;
 	display: inline-block;
 	transition: all 0.3s;
-	outline: none;
-	box-shadow: none;
-	text-shadow: none;
-	cursor: pointer;}
-    
-    .callback-form .contact-form button.border-button:hover {
+}
+
+.request-form a.border-button:hover {
 	background-color: #fff;
-	color: #a4c639;}
-    
-    .contact-us .contact-form button.filled-button {
-	background-color: #a4c639;
-	color: #fff;
-	border: none;
-	font-size: 13px;
-	text-transform: uppercase;
-	font-weight: 700;
-	padding: 12px 30px;
-	border-radius: 30px;
-	display: inline-block;
-	transition: all 0.3s;
-	outline: none;
-	box-shadow: none;
-	text-shadow: none;
-	cursor: pointer;}
-    
-    .contact-us .contact-form button.filled-button:hover {
-	background-color: #fff;
-	color: #a4c639;}*/
-
-
-
+	color: #a4c639;
+}
 /* Partners Style */
 
 .contact-partners {

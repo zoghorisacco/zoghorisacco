@@ -149,7 +149,14 @@ function autoScroll() {
 
 setInterval(autoScroll, 3000);
 
-  /*----Counter Up----*/
+
+
+
+
+
+
+
+/*----Counter Up----*/
   $(document).ready(function()  {
     $('.counter-add').each(function ()
     {

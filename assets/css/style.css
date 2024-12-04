@@ -1325,16 +1325,16 @@ td a:hover{
         display: block;
     }
     
-    @media (max-width: 500px) {
+    /**@media (max-width: 500px) {
         .testimonial-container {
             flex-direction: column;
         }
-    }
-    
-.testimony{
+    }**/
+    .testimony{
     background: #f7f7f7;
     border: 0;
-}
+    }
+
 
 /*---------------------
   Counter

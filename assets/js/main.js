@@ -147,7 +147,7 @@ function autoScroll() {
     });
 }
 
-setInterval(autoScroll, 3000);
+setInterval(autoScroll, 20000);
 
 
 

@@ -492,8 +492,9 @@ table img{
 }
 
 .request-form h2 {
-	font-size: 22px;
+	font-size: 45px;
 	font-weight: 600;
+    color: #ffff00;
 }
 
 .request-form span {
@@ -1003,8 +1004,8 @@ table img{
     .testimonial-container {
         display: flex;
         overflow: hidden;
-        width: 100%;
-        max-width: 600px;
+        width: auto;
+        max-width: 980px;
         margin: 0 auto;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1039,7 +1040,7 @@ table img{
     background: #f7f7f7;
     border: 0;
     }
-
+    /**.youtube-widget { background-color: #fff; padding: 20px; margin: 50px auto; max-width: 600px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center; } .youtube-widget h2 { margin-bottom: 20px; } .youtube-widget iframe { width: 100%; height: 315px; border: none; }*/
 
 /*---------------------
   Counter

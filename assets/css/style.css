@@ -949,57 +949,157 @@ table img{
         }
     }
 
-    /*--SERVICES SECTION---*
+    /*--SERVICES SECTION---*/
     
-    .services .icon-box {
-        padding: 30px;
-        position: relative;
-        overflow: hidden;
-        margin: 0 0 40px 0;
-        background: #fff;
-        box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-        transition: all 0.3s ease-in-out;
-        border-radius: 15px;
-        text-align: center;
-        border-bottom: 3px solid #fff;
-    }
+    /*** Service Start ***/
+.service .service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2) ;
+}
+
+.service .service-item .service-img {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service .service-item .service-img img {
+    transition: 0.5s;
+}
+
+.service .service-item .service-img::before {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: 0.5s;
+    z-index: 5;
     
-    .services .icon-box:hover {
-        transform: translateY(-5px);
-        border-color: #ef7f4d;
-    }
-    
-    #services .row p {
-        text-align: justify;
-    }
-    
-    .services .icon i {
-        font-size: 48px;
-        line-height: 1;
-        margin-bottom: 15px;
-        color: #fc9004;
-    }
-    
-    .services .title {
-        font-weight: 700;
-        margin-bottom: 15px;
-        font-size: 18px;
-    }
-    
-    .services .title a {
-        color: #111;
-    }
-    
-    .services .description {
-        font-size: 15px;
-        line-height: 28px;
-        margin-bottom: 0;
-    }
-    
-    .icon-box h4 {
-        text-align: center;
-    }*/
-    
+}
+
+.service .service-item:hover .service-img::before {
+    height: 100%;
+    background: rgba(21, 185, 217, .3);
+}
+
+.service .service-item .service-img:hover img {
+    transform: scale(1.3);
+}
+
+.service .service-item .service-content {
+    position: relative;
+    z-index: 2;
+
+}
+
+.service .service-item .service-content::before {
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgba(21, 185, 217, .5);
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.service .service-item:hover .service-content::before {
+    background: rgba(21, 185, 217, .5);
+    height: 100%;
+}
+
+.service .service-item .service-content .service-content-inner {
+    transition: 0.5s;
+}
+
+
+.service .service-item:hover .service-content .service-content-inner {
+    position: relative;
+    color: var(--bs-white) !important;
+    z-index: 9;
+}
+.service .service-item:hover .service-content .service-content-inner h5 {
+    color: var(--bs-secondary);
+}
+
+
+/*** Section Title Start ***/
+.section-title {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section-title .sub-style {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+.section-title .sub-style::before {
+    content: "";
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-top: 8px;
+    margin-left: -100px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+.section-title .sub-style::after {
+    content: "";
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-bottom: 5px;
+    margin-left: -50px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+.sub-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--bs-primary);
+}
+
+.sub-title::before {
+    content: "";
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-top: 8px;
+    margin-right: -100px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+.sub-title::after {
+    content: "";
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-bottom: 8px;
+    margin-right: -50px;
+    border: 1px solid var(--bs-primary) !important;
+}
+
+/*** Service End ***/
+
 /**TESTIMONIAL CSS**/
     .testimonial-container {
         display: flex;
@@ -1040,27 +1140,8 @@ table img{
     background: #f7f7f7;
     border: 0;
     }
-    /**.youtube-widget { 
-    background-color: #fff; 
-    padding: 20px; 
-    margin: 50px auto; 
-    max-width: 600px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-    } 
-    .youtube-widget h2 { 
-    margin-bottom: 20px; 
-    } 
-    .youtube-widget iframe { 
-    width: 100%; 
-    height: 315px; 
-    border: none; 
-    }
-    */
-
-/*---------------------
-  Counter
------------------------*/
+    
+/*--- Counter----*/
 
 .counter {
 	padding-top: 80px;
@@ -2354,23 +2435,6 @@ table img{
         border-radius: 5px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     }
-    /*
-    .container .title {
-        font-size: 25px;
-        font-weight: 500;
-        position: relative;
-    }
-    
-    .container .title::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 3px;
-        width: 30px;
-        border-radius: 5px;
-        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-    }*/
     
     .content form .user-details {
         display: flex;
@@ -2527,34 +2591,7 @@ table img{
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    /*
-.page-heading {
-	text-align: center;
-	background-image: url(../images/page-heading-bg.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding: 230px 0px 150px 0px;
-	color: #fff;
-}
-
-.page-heading h1 {
-	text-transform: capitalize;
-	font-size: 36px;
-	font-weight: 700;
-	letter-spacing: 2px;
-	margin-bottom: 18px;
-}
-
-.page-heading span {
-	font-size: 15px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #fff;
-	display: block;
-}
-
-*/
+    
 
 /* Contact Information */
 
@@ -2694,89 +2731,51 @@ table img{
 }
 
 #regForm {
-                /*background-color: #C1BFBE;*/
-                /*background-image: url(./assets/img/blog/slide-3.jpg);*/
-                margin: 100px auto;
-                padding: 40px;
-                width: 70%;
-                min-width: 300px;
-            }
-            /* Style the input fields */
-            
-           #regForm input {
-                padding: 10px;
-                width: 100%;
-                font-size: 17px;
-                font-family: Raleway;
-                border: 1px solid #aaaaaa;
-            }
-            /* Mark input boxes that gets an error on validation: */
-            
-          #regForm  input .invalid {
-                background-color: #e90f0f;
-            }
-            /* Hide all steps by default: */
-            
-           #regForm .tab {
-                display: none;
-            }
-            /* Make circles that indicate the steps of the form: */
-            
-         #regForm   .step {
-                height: 15px;
-                width: 15px;
-                margin: 0 2px;
-                background-color: #bbbbbb;
-                border: none;
-                border-radius: 50%;
-                display: inline-block;
-                opacity: 0.5;
-            }
-            /* Mark the active step: */
-            
-           #regForm .step .active {
-                opacity: 1;
-            }
-            /* Mark the steps that are finished and valid: */
-            
-           #regForm .step .finish {
-                background-color: #04AA6D;
-            }
-           
-        .services { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            padding: 20px; 
-        } 
-        .service { 
-            background-color: #fff; 
-            margin: 10px; 
-            padding: 20px; 
-            width: 300px; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-            border-radius: 5px; 
-            text-align: center; 
-        } 
-        .service img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 5px; 
-        } 
-        .service h3 { 
-            margin-top: 15px; 
-            margin-bottom: 15px; 
-        } 
-        .service p { 
-            margin-bottom: 10px;
-        } 
-        .service button { 
-            padding: 10px 20px; 
-            border: none; 
-            border-radius: 5px; 
-            background-color: #007BFF; 
-            color: #fff; 
-            cursor: pointer; 
-        } .service button:hover { 
-            background-color: #0056b3; 
-        }
+/*background-color: #C1BFBE;*/
+/*background-image: url(./assets/img/blog/slide-3.jpg);*/
+margin: 100px auto;
+padding: 40px;
+width: 70%;
+min-width: 300px;
+}
+/* Style the input fields */
+
+#regForm input {
+padding: 10px;
+width: 100%;
+font-size: 17px;
+font-family: Raleway;
+border: 1px solid #aaaaaa;
+}
+/* Mark input boxes that gets an error on validation: */
+
+#regForm  input .invalid {
+background-color: #e90f0f;
+}
+/* Hide all steps by default: */
+
+#regForm .tab {
+display: none;
+}
+/* Make circles that indicate the steps of the form: */
+
+#regForm   .step {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbbbbb;
+border: none;
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+/* Mark the active step: */
+
+#regForm .step .active {
+opacity: 1;
+}
+/* Mark the steps that are finished and valid: */
+
+#regForm .step .finish {
+background-color: #04AA6D;
+}

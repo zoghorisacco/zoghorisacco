@@ -730,13 +730,8 @@ table img:hover{
         font-size: 20px;
     }
     
-    .featured .icon-box h3 a {
-        color: #545454;
-        transition: 0.3s;
-    }
-    
     .featured .icon-box p {
-        color: #545454;
+        color: #000000;
         line-height: 24px;
         font-size: 14px;
         margin-bottom: 0;
@@ -747,9 +742,9 @@ table img:hover{
         /* background: #e96b56;         
         background-image: url(/zoghorisacco/assets/img/clients/values.png);*/
     }
+   
     
     .featured .icon-box:hover i,
-    .featured .icon-box:hover h3 a,
     .featured .icon-box:hover p {
         color: #fff;
     }
@@ -1010,14 +1005,15 @@ table img:hover{
     left: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background: rgba(21, 185, 217, .5);
+    background: #FFFF00;
     transition: 0.5s;
     z-index: 3;
 }
 
 .service .service-item:hover .service-content::before {
-    background: rgba(21, 185, 217, .5);
+    background: #cc7606;
     height: 100%;
+
 }
 
 .service .service-item .service-content .service-content-inner {
@@ -1665,7 +1661,7 @@ table img:hover{
 	margin-bottom: 5px;
 }
 
-.breadcrumb__links a {
+.breadcrumb__links p {
 	font-size: 15px;
 	color: #ffffff;
 	margin-right: 18px;
@@ -1683,15 +1679,13 @@ table img:hover{
 
 .breadcrumb__links span {
 	font-size: 15px;
-	color: #a8a8a8;
+	color: #1100f9;
 	display: inline-block;
 }
 
 
 
-/*---------------------
-    History
------------------------*/
+/*------- History----*/
 
 .history .section-title h2 {
 	color: #ffffff;

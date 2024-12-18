@@ -282,9 +282,8 @@ body {
             left: -100%;
         }
     }
-    /**
-* Mobile Navigation 
-*/
+
+    /*** Mobile Navigation */
     
     .mobile-nav-toggle {
         color: #545454;
@@ -553,36 +552,6 @@ table img:hover{
 	margin: auto;
 }
 
-
-/*
-.page-heading {
-	text-align: center;
-	background-image: url(../);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding: 230px 0px 150px 0px;
-	color: #fff;
-}
-
-.page-heading h1 {
-	text-transform: capitalize;
-	font-size: 36px;
-	font-weight: 700;
-	letter-spacing: 2px;
-	margin-bottom: 18px;
-}
-
-.page-heading span {
-	font-size: 15px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #fff;
-	display: block;
-}
-*/
-
-
 /**SECTION---***/
 
 .section-header {
@@ -663,9 +632,7 @@ table img:hover{
     .section-title p {
         margin-bottom: 0;
     }
-    /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
+    /*Breadcrumbs*/
     
     .breadcrumbs {
         padding: 20px 0 20px 0;
@@ -785,12 +752,6 @@ table img:hover{
     background: #ffff00;
     font-size: large;
 }
-
-
-/*---------------------
-  Testimonial
------------------------*/
-
 
 
     /*----# About---*/
@@ -1100,6 +1061,68 @@ table img:hover{
     border: 1px solid var(--bs-primary) !important;
 }
 
+/* Float four columns side by side */
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align:justify;
+    /*background-color: #f1f1f1;*/
+  }
+  /*.card h5{
+    text-align: center;
+    color: #000;
+    font-size: 28px;
+  }
+    */
+
+  .card span{
+    font-size: 25px;
+	font-weight: 400;
+	display: inline-block;
+	margin-top: 10px;
+    color: #b30000;
+  }
+    .custom-list { 
+        list-style-type: none; /* Remove default bullets */ 
+        padding: 0; 
+    } 
+    .custom-list li {
+        background: #f0f0f0; /* Background color */ 
+        margin: 5px 0; /* Space between items */ 
+        padding: 10px; /* Padding inside items */ 
+        border-radius: 5px; /* Rounded corners */ 
+        }
+    .custom-list li::before {
+        content: "✔"; /* Custom bullet */
+        color: rgb(181, 118, 2); /* Bullet color */
+        margin-right: 10px; /* Space between bullet and text */ 
+        }
 /*** Service End ***/
 
 /**TESTIMONIAL CSS**/
@@ -1644,9 +1667,18 @@ table img:hover{
     /*--Breadcrumb ---*/
 
 .breadcrumb-option {
-	padding: 70px 0 65px;
+	/*padding: 70px 0 65px;*/
+    background-image: url(/zoghorisacco/assets/img/breadcrumb/savingscrumb.png);
+    background-size: cover; /* Ensures the image covers the entire breadcrumb area */
+    background-position: center;    /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 10px 15px; /*Adds padding to the breadcrumb*/
 }
-
+.breadcrumb-option img{
+    width: 100%;
+    vertical-align: middle;
+    z-index: -1;
+}
 .breadcrumb-option.contact-breadcrumb {
 	padding: 70px 0 260px;
 }
@@ -1659,6 +1691,8 @@ table img:hover{
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
 }
 
 .breadcrumb__links p {
@@ -1667,6 +1701,7 @@ table img:hover{
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;
+    z-index: 2;
 }
 
 .breadcrumb__links a:after {
@@ -1682,8 +1717,12 @@ table img:hover{
 	color: #1100f9;
 	display: inline-block;
 }
-
-
+/*.savings{
+    background-image: url(/zoghorisacco/assets/img/breadcrumb/savingscrumb.png);
+    width: 100%;
+    vertical-align: middle;
+}
+*/
 
 /*------- History----*/
 

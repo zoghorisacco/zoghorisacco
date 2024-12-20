@@ -1668,7 +1668,7 @@ table img:hover{
 
 .breadcrumb-option {
 	/*padding: 70px 0 65px;*/
-    background-image: url(/zoghorisacco/assets/img/breadcrumb/savingscrumb.png);
+    background-image: url(/zoghorisacco/assets/img/breadcrumb/savings.png);
     background-size: cover; /* Ensures the image covers the entire breadcrumb area */
     background-position: center;    /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */

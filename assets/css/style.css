@@ -452,10 +452,20 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 table {
-    /*background-color: #0000b3;*/
+   /* background-color: #0000b3;*/
     background-color: #fff;
     width: 100%;
     border-collapse: collapse;
+
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    padding: 20px; 
+    width: 100%; 
+    text-align: center;    
 }
 td {
     border: 1px solid #ddd;
@@ -487,6 +497,24 @@ table img{
 table img:hover{
     filter: none;
     transform: scale(1.1);
+}
+
+.disclaimer { 
+    border: 1px solid #ccc; 
+    padding: 15px; 
+    background-color: #f9f9f9; 
+    font-size: 14px; 
+    color: #333; 
+
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.3); 
+     padding: 20px; 
+     width: 100%; 
+     text-align: center;
 }
 /* Request Form */
 
@@ -668,6 +696,68 @@ table img:hover{
         content: "/";
     }
 
+
+        
+    /*--Breadcrumb ---*/
+
+.breadcrumb-option {
+	/*padding: 70px 0 65px;*/
+    background-image: url(/zoghorisacco/assets/img/breadcrumb/savings.png);
+    background-size: cover; /* Ensures the image covers the entire breadcrumb area */
+    background-position: center;    /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+   padding: 10px 15px; /* Adds padding to the breadcrumb*/
+
+}
+.breadcrumb-option img{
+    width: 100%;
+    vertical-align: middle;
+    z-index: -1;
+}
+.breadcrumb-option.contact-breadcrumb {
+	padding: 70px 0 260px;
+}
+
+.breadcrumb-option.contact-breadcrumb h2 {
+	margin-bottom: 0;
+}
+
+.breadcrumb__text h2 {
+	color: #ffffff;
+	font-weight: 700;
+	margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb__links p {
+	font-size: 15px;
+	color: #ffffff;
+	margin-right: 18px;
+	display: inline-block;
+	position: relative;
+    z-index: 2;
+}
+
+.breadcrumb__links a:after {
+	position: absolute;
+	right: -15px;
+	top: 0;
+	content: "";
+	font-family: "FontAwesome";
+}
+
+.breadcrumb__links span {
+	font-size: 15px;
+	color: #1100f9;
+	display: inline-block;
+}
+/*.savings{
+    background-image: url(/zoghorisacco/assets/img/breadcrumb/savingscrumb.png);
+    width: 100%;
+    vertical-align: middle;
+}
+*/
     /*--- Featured---*/    
     .featured {
         position: relative;
@@ -731,6 +821,8 @@ table img:hover{
 	text-align: center;
 	padding: 0 30px 60px;
 	margin-bottom: 80px;
+
+    background: rgba(255, 255, 255, 0.2); border-radius: 10px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 20px; width: 100%; text-align: center;
 }
 
 .choose__item img {
@@ -956,6 +1048,23 @@ table img:hover{
     z-index: 2;
 
 }
+.service-content{
+    /*border: 1px solid #ccc; 
+    padding: 15px; 
+    background-color: #f9f9f9; 
+    font-size: 14px; 
+    color: #333; */
+
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.3); 
+     padding: 20px; 
+     width: 100%; 
+     text-align: center;
+}
 
 .service .service-item .service-content::before {
     width: 100%;
@@ -991,10 +1100,45 @@ table img:hover{
     color: var(--bs-secondary);
 }
 
+/*#savingsproducts .service-item
+{
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    padding: 20px; 
+    width: 100%; 
+    text-align: center;
+}
 
+#savingsproducts .mb-4{
+    text-align: justify;
+
+}*/
+.service-content-inner .disclaimer p, li{
+    text-align: justify;
+}
+
+.custom-list { 
+    list-style-type: none; /* Remove default bullets */ 
+    padding: 0;
+ } 
+    .custom-list li { 
+        background: #f0f0f0; /* Background color */ 
+        margin: 5px 0; /* Space between items */ 
+        padding: 10px; /* Padding inside items */ 
+        border-radius: 5px; /* Rounded corners */ 
+    } 
+    .custom-list li::before { 
+        content: "✔"; /* Custom bullet */ 
+        color: rgb(176, 106, 7); /* Bullet color */ 
+        margin-right: 10px; /* Space between bullet and text */
+    }
 /*** Section Title Start ***/
 .section-title {
-    max-width: 900px;
+    /*max-width: 900px;*/
     text-align: center;
     margin: 0 auto;
 }
@@ -1060,70 +1204,7 @@ table img:hover{
     margin-right: -50px;
     border: 1px solid var(--bs-primary) !important;
 }
-
-/* Float four columns side by side */
-.column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
-  }
-  
-  /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    text-align:justify;
-    /*background-color: #f1f1f1;*/
-  }
-  /*.card h5{
-    text-align: center;
-    color: #000;
-    font-size: 28px;
-  }
-    */
-
-  .card span{
-    font-size: 25px;
-	font-weight: 400;
-	display: inline-block;
-	margin-top: 10px;
-    color: #b30000;
-  }
-    .custom-list { 
-        list-style-type: none; /* Remove default bullets */ 
-        padding: 0; 
-    } 
-    .custom-list li {
-        background: #f0f0f0; /* Background color */ 
-        margin: 5px 0; /* Space between items */ 
-        padding: 10px; /* Padding inside items */ 
-        border-radius: 5px; /* Rounded corners */ 
-        }
-    .custom-list li::before {
-        content: "✔"; /* Custom bullet */
-        color: rgb(181, 118, 2); /* Bullet color */
-        margin-right: 10px; /* Space between bullet and text */ 
-        }
-/*** Service End ***/
+  /*** Service End ***/
 
 /**TESTIMONIAL CSS**/
     .testimonial-container {
@@ -1663,66 +1744,7 @@ table img:hover{
         }
     }
 
-    
-    /*--Breadcrumb ---*/
 
-.breadcrumb-option {
-	/*padding: 70px 0 65px;*/
-    background-image: url(/zoghorisacco/assets/img/breadcrumb/savings.png);
-    background-size: cover; /* Ensures the image covers the entire breadcrumb area */
-    background-position: center;    /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    padding: 10px 15px; /*Adds padding to the breadcrumb*/
-}
-.breadcrumb-option img{
-    width: 100%;
-    vertical-align: middle;
-    z-index: -1;
-}
-.breadcrumb-option.contact-breadcrumb {
-	padding: 70px 0 260px;
-}
-
-.breadcrumb-option.contact-breadcrumb h2 {
-	margin-bottom: 0;
-}
-
-.breadcrumb__text h2 {
-	color: #ffffff;
-	font-weight: 700;
-	margin-bottom: 5px;
-    position: relative;
-    z-index: 2;
-}
-
-.breadcrumb__links p {
-	font-size: 15px;
-	color: #ffffff;
-	margin-right: 18px;
-	display: inline-block;
-	position: relative;
-    z-index: 2;
-}
-
-.breadcrumb__links a:after {
-	position: absolute;
-	right: -15px;
-	top: 0;
-	content: "";
-	font-family: "FontAwesome";
-}
-
-.breadcrumb__links span {
-	font-size: 15px;
-	color: #1100f9;
-	display: inline-block;
-}
-/*.savings{
-    background-image: url(/zoghorisacco/assets/img/breadcrumb/savingscrumb.png);
-    width: 100%;
-    vertical-align: middle;
-}
-*/
 
 /*------- History----*/
 

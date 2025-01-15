@@ -132,6 +132,64 @@
     }
   });
 
+
+  /**var currentTab = 0;
+  showTab(currentTab);
+  
+  function showTab(n) {
+      var x = document.getElementsByClassName("tab");
+      x[n].style.display = "block";
+      if (n == 0) {
+          document.getElementById("prevBtn").style.display = "none";
+      } else {
+          document.getElementById("prevBtn").style.display = "inline";
+      }
+      if (n == (x.length - 1)) {
+          document.getElementById("nextBtn").innerHTML = "Submit";
+      } else {
+          document.getElementById("nextBtn").innerHTML = "Next";
+      }
+      fixStepIndicator(n);
+  }
+  
+  function nextPrev(n) {
+      var x = document.getElementsByClassName("tab");
+      if (n == 1 && !validateForm()) return false;
+      x[currentTab].style.display = "none";
+      currentTab = currentTab + n;
+      if (currentTab >= x.length) {
+          document.getElementById("regForm").submit();
+          return false;
+      }
+      showTab(currentTab);
+  }
+  
+  function validateForm() {
+      var x, y, i, valid = true;
+      x = document.getElementsByClassName("tab");
+      y = x[currentTab].getElementsByTagName("input");
+      for (i = 0; i < y.length; i++) {
+          if (y[i].value == "") {
+              y[i].className += " invalid";
+              valid = false;
+          }
+      }
+      if (valid) {
+          document.getElementsByClassName("step")[currentTab].className += " finish";
+      }
+      return valid;
+  }
+  
+  function fixStepIndicator(n) {
+      var i, x = document.getElementsByClassName("step");
+      for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" active", "");
+      }
+      x[n].className += " active";
+  }
+  
+
+
 /**AUTOSCROLL TESTIMONIAL */
 const testimonials = document.querySelector('.testimonial-container');
 let scrollAmount = 0;
@@ -184,17 +242,6 @@ function openTab(tabName) {
   /**carousel hero*/
   
 
-  /**
-   * Hero carousel indicators
-  
-  let heroCarouselIndicators = select("#hero-carousel-indicators")
-  let heroCarouselItems = select('#heroCarousel .carousel-item', true)
-
-  heroCarouselItems.forEach((item, index) => {
-    (index === 0) ?
-    heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-  });
 
   /*** Clients Slider*/
   new Swiper('.clients-slider', {
@@ -230,21 +277,6 @@ function openTab(tabName) {
     }
   });
 
-  /*** Skills animation*/
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
   /*** Porfolio isotope and filter*/
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -279,7 +311,7 @@ function openTab(tabName) {
   });
 
   /*** Portfolio details slider*/
-  new Swiper('.portfolio-details-slider', {
+ new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: true,
     autoplay: {
@@ -292,5 +324,4 @@ function openTab(tabName) {
       clickable: true
     }
   });
-
 })()

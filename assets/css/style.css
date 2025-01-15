@@ -2794,21 +2794,21 @@ table img:hover{
 }
 
 #regForm {
-/*background-color: #C1BFBE;*/
-/*background-image: url(./assets/img/blog/slide-3.jpg);*/
+background-color: #f0f0f0;
 margin: 100px auto;
 padding: 40px;
-width: 70%;
-min-width: 300px;
+width: 90vw;
+text-decoration: #000;
 }
 /* Style the input fields */
 
 #regForm input {
 padding: 10px;
 width: 100%;
-font-size: 17px;
+font-size: 20px;
 font-family: Raleway;
-border: 1px solid #aaaaaa;
+border: 2px solid #061af7;
+border-radius: 12px;
 }
 /* Mark input boxes that gets an error on validation: */
 
@@ -2822,7 +2822,7 @@ display: none;
 }
 /* Make circles that indicate the steps of the form: */
 
-#regForm   .step {
+#regForm .step {
 height: 15px;
 width: 15px;
 margin: 0 2px;
@@ -2841,6 +2841,259 @@ opacity: 1;
 
 #regForm .step .finish {
 background-color: #04AA6D;
+}
+
+#regForm .form-group {
+    margin-bottom: 20px;
+} 
+#regForm .form-control {
+    border-radius: 0;
+} 
+#regForm .btn-primary {
+    border-radius: 0;
+}
+
+#nextBtn, #prevBtn{
+    background-color: #0000ff; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+/*#regForm select*/
+
+#regForm .input-box {
+    margin-bottom: 20px;
+}
+
+#regForm .details {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#regForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    appearance: none; /* Removes default dropdown arrow in some browsers */
+    -webkit-appearance: none; /* For Webkit browsers */
+    -moz-appearance: none; /* For Firefox */
+    /*background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;*/
+    cursor: pointer;
+}
+
+#regForm select:hover {
+    border-color: #9ecaed;
+}
+
+#regForm select:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+/* Custom styling for the placeholder option */
+#regForm option[value=""] {
+    color: #999;
+}
+
+/* Remove the oninput attribute from options since it's not standard for dropdowns
+
+#regForm .profile-photo-container {
+    text-align: center;
+   
+  } */
+  
+  #regForm .profile-photo {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #333;
+    border-radius: 0; /* Use 0 for square */
+    overflow: hidden; /* Hides any image overflow */
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  #regForm .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  #regForm .upload-button {
+    background-color: #0000ff; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #regForm .profile-photo:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  input[type="checkbox"], label {
+    vertical-align: middle;
+}
+label {
+    margin-left: 5px;
+}
+
+.terms-checkbox {
+    margin: 20px 0;
+  }
+  
+  .terms-checkbox input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+  }
+  
+  .terms-checkbox label {
+    vertical-align: middle;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .terms-checkbox a {
+    color: #007BFF;
+    text-decoration: underline;
+  }
+  
+  .terms-checkbox a:hover {
+    color: #0056b3;
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .ContributionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ContributionAmount {
+    display: flex;
+    flex-direction: column;
+}
+
+.ContributionAmount label {
+    margin-bottom: 5px;
+}
+
+.ContributionAmount input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  .remittance-options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.remittance-option {
+    display: flex;
+    align-items: center;
+}
+
+.remittance-option input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.remittance-option.others {
+    flex-direction: row;
+    align-items: center;
+}
+
+.remittance-option.others input[type="text"] {
+    margin-left: 10px;
+    padding: 5px;
+    width: 150px; /* Adjust width as needed */
+}
+
+.remittance-option.others input[type="text"]:disabled {
+    background: #f4f4f4;
+    color: #999;
+    cursor: not-allowed;
+}
+.signature-section {
+    margin: 20px 0;
+}
+
+.signature-canvas {
+    border: 1px solid #ccc;
+    cursor: crosshair;
+}
+
+#clearSignature, #saveSignature {
+    margin-top: 10px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.validation-messages {
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
 }
 
 
@@ -2863,7 +3116,8 @@ background-color: #04AA6D;
     left: 0; 
     width: 75%; /* Adjust the width as needed */ 
     height: 100%; 
-    background: linear-gradient(to right, rgb(255, 255, 0), rgba(5, 5, 5, 0)); /* Adjust the colors and opacity as needed */ z-index: 1;
+    background: linear-gradient(to right, rgb(255, 255, 0), rgba(5, 5, 5, 0)); /* Adjust the colors and opacity as needed */ 
+    z-index: 1;
 }
 #hero .container{
     z-index: 5;
@@ -2910,3 +3164,18 @@ background-color: #04AA6D;
   #hero .btn-get-started:hover {
     background: #ff5821;
   }
+  
+ .background-imaged{
+    position: relative;
+    background: url(/zoghorisacco/assets/img/breadcrumb/join.png) center center no-repeat;
+   
+ }
+ .background-imaged::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 75%; /* Adjust the width as needed */ 
+    height: 100%; 
+    background: linear-gradient(to right, rgb(255, 255, 0), rgba(5, 5, 5, 0)); /* Adjust the colors and opacity as needed */ z-index: 1;
+}

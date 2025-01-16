@@ -3044,7 +3044,8 @@ label {
   .remittance-options {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    align-items: center;
+
 }
 
 .remittance-option {
@@ -3064,7 +3065,7 @@ label {
 .remittance-option.others input[type="text"] {
     margin-left: 10px;
     padding: 5px;
-    width: 150px; /* Adjust width as needed */
+    width: 150px;
 }
 
 .remittance-option.others input[type="text"]:disabled {
@@ -3072,6 +3073,7 @@ label {
     color: #999;
     cursor: not-allowed;
 }
+
 .signature-section {
     margin: 20px 0;
 }

@@ -294,7 +294,7 @@
             <h3 class="mb-4"><strong>E-LOANS</strong></h3>
             <p class="mb-4">These are loans members can access via the app or ussd code instantly and at their convenience any time anywhere. These products have been designed to meet the evolving financial needs of our members.</p>
             <h5 class="text-center text-primary"><strong>Terms and Conditions</strong></h5>
-            <li>Maximum loan amount: Ksh 30,000.</li>
+            <li>Maximum loan amount: Ksh 100,000.</li>
             <li>Repayment periods vary from 30 DAYS - 90 DAYS.</li>
             <li>Interest Rate: Vary from 7% - 12.5%.</li>
             <li>Minimum Share Capital: Ksh 3,000.</li>
@@ -319,7 +319,7 @@
                 <tr>
                     <td>MOBILE LOAN</td>
                     <td>Ksh. 1,000</td>
-                    <td>Ksh. 30,000</td>
+                    <td>Ksh. 100,000</td>
                     <td>7% P.M</td>
                     <td>30 DAYS</td>
                     <td>1</td>
@@ -327,7 +327,7 @@
                 <tr>
                     <td>ZOGHORI BUSINESS CASH LOAN</td>
                     <td>Ksh. 5,000.00</td>
-                    <td>Ksh. 30,000</td>
+                    <td>Ksh. 100,000</td>
                     <td>10% for 60 DAYS</td>
                     <td>60 DAYS</td>
                     <td>2</td>
@@ -335,7 +335,7 @@
                 <tr>
                     <td>ZOGHORI CASH PLUS LOAN</td>
                     <td>Ksh. 10,000.00</td>
-                    <td>Ksh. 30,000</td>
+                    <td>Ksh. 100,000</td>
                     <td>12.5% for 90 DAYS</td>
                     <td>90 DAYS</td>
                     <td>3</td>
@@ -414,7 +414,193 @@
   </table>
 </div>
   
+<div id="loan-calculator" class="calculator">
+  <h2>Loan Calculator (Reducing Balance Method)</h2>
   
+  <form id="loanForm">
+      <div class="form-group">
+          <label for="loanAmount">Loan Amount:</label>
+          <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" required>
+      </div>
+      
+      <div class="form-group">
+          <label for="interestRate">Annual Interest Rate (%):</label>
+          <input type="number" step="0.01" id="interestRate" name="interestRate" placeholder="Enter interest rate" required>
+      </div>
+      
+      <div class="form-group">
+          <label for="loanTerm">Loan Term (Years):</label>
+          <input type="number" id="loanTerm" name="loanTerm" placeholder="Enter loan term" required>
+      </div>
+      
+      <div class="form-group">
+          <label for="monthlyPayment">Monthly Payment:</label>
+          <input type="number" id="monthlyPayment" name="monthlyPayment" readonly>
+      </div>
+      
+      <div class="form-group">
+          <label for="totalInterest">Total Interest Paid:</label>
+          <input type="number" id="totalInterest" name="totalInterest" readonly>
+      </div>
+      
+      <button type="button" id="calculateBtn">Calculate</button>
+  </form>
+  
+  <div id="amortizationSchedule">
+      <h3>Amortization Schedule</h3>
+      <table id="scheduleTable">
+          <thead>
+              <tr>
+                  <th>Month</th>
+                  <th>Beginning Balance</th>
+                  <th>Interest</th>
+                  <th>Principal</th>
+                  <th>Ending Balance</th>
+              </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+      </table>
+  </div>
+<script>
+  document.getElementById('calculateBtn').addEventListener('click', function() {
+    // Get form inputs
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly rate from annual rate in months
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value); // Loan term already in months
+
+    if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+        alert("Please enter valid numbers.");
+        return;
+    }
+
+    // Calculate monthly payment
+    const monthlyPayment = calculateMonthlyPayment(loanAmount, interestRate, loanTerm);
+
+    // Generate amortization schedule
+    const schedule = generateAmortizationSchedule(loanAmount, interestRate, loanTerm, monthlyPayment);
+
+    // Update UI
+    document.getElementById('monthlyPayment').value = monthlyPayment.toFixed(2);
+    document.getElementById('totalInterest').value = (schedule.reduce((acc, entry) => acc + entry.interest, 0)).toFixed(2);
+
+    // Populate the amortization schedule table
+    const tableBody = document.getElementById('scheduleBody');
+    tableBody.innerHTML = ''; // Clear previous entries
+
+    schedule.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${entry.month}</td>
+            <td>$${entry.beginningBalance.toFixed(2)}</td>
+            <td>$${entry.interest.toFixed(2)}</td>
+            <td>$${entry.principal.toFixed(2)}</td>
+            <td>$${entry.endingBalance.toFixed(2)}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+});
+
+function calculateMonthlyPayment(principal, monthlyRate, months) {
+    return (monthlyRate * principal) / (1 - Math.pow(1 + monthlyRate, -months));
+}
+
+function generateAmortizationSchedule(principal, monthlyRate, months, monthlyPayment) {
+    let balance = principal;
+    let schedule = [];
+
+    for (let month = 1; month <= months; month++) {
+        let interest = balance * monthlyRate;
+        let principalPayment = monthlyPayment - interest;
+        balance -= principalPayment;
+
+        schedule.push({
+            month: month,
+            beginningBalance: balance + principalPayment,
+            interest: interest,
+            principal: principalPayment,
+            endingBalance: balance
+        });
+
+        // Handle rounding errors that might make balance negative or too small
+        if (balance < 0.01) {
+            balance = 0;
+            break;
+        }
+    }
+    return schedule;
+}
+</script>
+</div>
+<!--<script>
+  document.getElementById('calculateBtn').addEventListener('click', function() {
+    // Get form inputs
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly rate from annual rate in months
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value); // Loan term already in months
+
+    if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+        alert("Please enter valid numbers.");
+        return;
+    }
+
+    // Calculate monthly payment
+    const monthlyPayment = calculateMonthlyPayment(loanAmount, interestRate, loanTerm);
+
+    // Generate amortization schedule
+    const schedule = generateAmortizationSchedule(loanAmount, interestRate, loanTerm, monthlyPayment);
+
+    // Update UI
+    document.getElementById('monthlyPayment').value = monthlyPayment.toFixed(2);
+    document.getElementById('totalInterest').value = (schedule.reduce((acc, entry) => acc + entry.interest, 0)).toFixed(2);
+
+    // Populate the amortization schedule table
+    const tableBody = document.getElementById('scheduleBody');
+    tableBody.innerHTML = ''; // Clear previous entries
+
+    schedule.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${entry.month}</td>
+            <td>$${entry.beginningBalance.toFixed(2)}</td>
+            <td>$${entry.interest.toFixed(2)}</td>
+            <td>$${entry.principal.toFixed(2)}</td>
+            <td>$${entry.endingBalance.toFixed(2)}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+});
+
+function calculateMonthlyPayment(principal, monthlyRate, months) {
+    return (monthlyRate * principal) / (1 - Math.pow(1 + monthlyRate, -months));
+}
+
+function generateAmortizationSchedule(principal, monthlyRate, months, monthlyPayment) {
+    let balance = principal;
+    let schedule = [];
+
+    for (let month = 1; month <= months; month++) {
+        let interest = balance * monthlyRate;
+        let principalPayment = monthlyPayment - interest;
+        balance -= principalPayment;
+
+        schedule.push({
+            month: month,
+            beginningBalance: balance + principalPayment,
+            interest: interest,
+            principal: principalPayment,
+            endingBalance: balance
+        });
+
+        // Handle rounding errors that might make balance negative or too small
+        if (balance < 0.01) {
+            balance = 0;
+            break;
+        }
+    }
+    return schedule;
+}
+</script>-->
+
   <!--Footer  -->
   <footer id="footer">
       <div class="footer-top">

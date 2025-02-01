@@ -325,3 +325,71 @@ function openTab(tabName) {
     }
   });
 })()
+
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  // Get form inputs
+  const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+  const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly rate
+  const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12; // Convert to months
+
+  if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+      alert("Please enter valid numbers.");
+      return;
+  }
+
+  // Calculate monthly payment
+  const monthlyPayment = calculateMonthlyPayment(loanAmount, interestRate, loanTerm);
+
+  // Generate amortization schedule
+  const schedule = generateAmortizationSchedule(loanAmount, interestRate, loanTerm, monthlyPayment);
+
+  // Update UI
+  document.getElementById('monthlyPayment').value = monthlyPayment.toFixed(2);
+  document.getElementById('totalInterest').value = (schedule.reduce((acc, entry) => acc + entry.interest, 0)).toFixed(2);
+
+  // Populate the amortization schedule table
+  const tableBody = document.getElementById('scheduleBody');
+  tableBody.innerHTML = ''; // Clear previous entries
+
+  schedule.forEach(entry => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+          <td>${entry.month}</td>
+          <td>$${entry.beginningBalance.toFixed(2)}</td>
+          <td>$${entry.interest.toFixed(2)}</td>
+          <td>$${entry.principal.toFixed(2)}</td>
+          <td>$${entry.endingBalance.toFixed(2)}</td>
+      `;
+      tableBody.appendChild(row);
+  });
+});
+
+function calculateMonthlyPayment(principal, monthlyRate, months) {
+  return (monthlyRate * principal) / (1 - Math.pow(1 + monthlyRate, -months));
+}
+
+function generateAmortizationSchedule(principal, monthlyRate, months, monthlyPayment) {
+  let balance = principal;
+  let schedule = [];
+
+  for (let month = 1; month <= months; month++) {
+      let interest = balance * monthlyRate;
+      let principalPayment = monthlyPayment - interest;
+      balance -= principalPayment;
+
+      schedule.push({
+          month: month,
+          beginningBalance: balance + principalPayment,
+          interest: interest,
+          principal: principalPayment,
+          endingBalance: balance
+      });
+
+      // Handle rounding errors that might make balance negative or too small
+      if (balance < 0.01) {
+          balance = 0;
+          break;
+      }
+  }
+  return schedule;
+}

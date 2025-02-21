@@ -1,9 +1,9 @@
-(function() {
+/*(function() {
   "use strict";
 
   /**
    * Easy selector helper function
-   */
+   *
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -15,7 +15,7 @@
 
   /**
    * Easy event listener function
-   */
+   *
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
     if (selectEl) {
@@ -29,14 +29,14 @@
 
   /**
    * Easy on scroll event listener 
-   */
+   *
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
 
   /**
    * Scrolls to an element with header offset
-   */
+   *
   const scrollto = (el) => {
     let header = select('#header')
     let offset = header.offsetHeight
@@ -54,7 +54,7 @@
 
   /**
    * Header fixed top on scroll
-   */
+
   let selectHeader = select('#header')
   if (selectHeader) {
     let headerOffset = selectHeader.offsetTop
@@ -74,7 +74,7 @@
 
   /**
    * Back to top button
-   */
+   
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -90,7 +90,7 @@
 
   /**
    * Mobile nav toggle
-   */
+   
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
@@ -99,7 +99,7 @@
 
   /**
    * Mobile nav dropdowns activate
-   */
+   
   on('click', '.navbar .dropdown > a', function(e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
@@ -107,7 +107,7 @@
     }
   }, true)
 
-  /*** Scrool with ofset on links with a class name .scrollto*/
+  /*** Scrool with ofset on links with a class name .scrollto
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
@@ -123,7 +123,7 @@
     }
   }, true)
 
-  /*** Scroll with ofset on page load with hash links in the url*/
+  /*** Scroll with ofset on page load with hash links in the url
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
@@ -190,7 +190,7 @@
   
 
 
-/**AUTOSCROLL TESTIMONIAL */
+/**AUTOSCROLL TESTIMONIAL 
 const testimonials = document.querySelector('.testimonial-container');
 let scrollAmount = 0;
 
@@ -221,7 +221,7 @@ function openTab(tabName) {
 
 
 
-/*----Counter Up----*/
+/*----Counter Up----
   $(document).ready(function()  {
     $('.counter-add').each(function ()
     {
@@ -243,7 +243,7 @@ function openTab(tabName) {
   
 
 
-  /*** Clients Slider*/
+  /*** Clients Slider*
   new Swiper('.clients-slider', {
     speed: 400,
     loop: true,
@@ -277,7 +277,7 @@ function openTab(tabName) {
     }
   });
 
-  /*** Porfolio isotope and filter*/
+  /*** Porfolio isotope and filter*
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
@@ -305,12 +305,12 @@ function openTab(tabName) {
 
   /**
    * Initiate portfolio lightbox 
-   */
+   
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
   });
 
-  /*** Portfolio details slider*/
+  /*** Portfolio details slider*
  new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: true,
@@ -392,4 +392,303 @@ function generateAmortizationSchedule(principal, monthlyRate, months, monthlyPay
       }
   }
   return schedule;
-}
+}*/
+
+
+(function() {
+  "use strict";
+
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    if (all) {
+      return [...document.querySelectorAll(el)];
+    } else {
+      return document.querySelector(el);
+    }
+  };
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all);
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener));
+      } else {
+        selectEl.addEventListener(type, listener);
+      }
+    }
+  };
+
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    if (el) {
+      el.addEventListener('scroll', listener);
+    }
+  };
+
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select('#header');
+    let offset = header ? header.offsetHeight : 0;
+
+    if (header && !header.classList.contains('header-scrolled')) {
+      offset -= 16;
+    }
+
+    let elementPos = select(el)?.offsetTop;
+    if (elementPos !== undefined) {
+      window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  /*** Header fixed top on scroll */
+  let selectHeader = select('#header');
+  if (selectHeader) {
+    let headerOffset = selectHeader.offsetTop;
+    let nextElement = selectHeader.nextElementSibling;
+    const headerFixed = () => {
+      if (window.scrollY >= headerOffset) {
+        selectHeader.classList.add('fixed-top');
+        if (nextElement) nextElement.classList.add('scrolled-offset');
+      } else {
+        selectHeader.classList.remove('fixed-top');
+        if (nextElement) nextElement.classList.remove('scrolled-offset');
+      }
+    };
+    window.addEventListener('load', headerFixed);
+    onscroll(document, headerFixed);
+  }
+ 
+
+  /**   * Preloader   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
+
+  /**   * Back to top button   */
+  let backtotop = select('.back-to-top');
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active');
+      } else {
+        backtotop.classList.remove('active');
+      }
+    };
+    window.addEventListener('load', toggleBacktotop);
+    onscroll(document, toggleBacktotop);
+  }
+
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    let navbar = select('#navbar');
+    if (navbar) {
+      navbar.classList.toggle('navbar-mobile');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    }
+  });
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    let navbar = select('#navbar');
+    if (navbar && navbar.classList.contains('navbar-mobile')) {
+      e.preventDefault();
+      if (this.nextElementSibling) {
+        this.nextElementSibling.classList.toggle('dropdown-active');
+      }
+    }
+  }, true);
+
+  /**
+   * Scroll with offset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(this.hash)) {
+      e.preventDefault();
+
+      let navbar = select('#navbar');
+      if (navbar && navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile');
+        let navbarToggle = select('.mobile-nav-toggle');
+        if (navbarToggle) {
+          navbarToggle.classList.toggle('bi-list');
+          navbarToggle.classList.toggle('bi-x');
+        }
+      }
+      scrollto(this.hash);
+    }
+  }, true);
+
+  /**
+   * Scroll with offset on page load with hash links in the url
+   */
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      let hashElement = select(window.location.hash);
+      if (hashElement) {
+        scrollto(window.location.hash);
+      }
+    }
+  });
+
+  /**
+   * Autoscroll Testimonials
+   */
+  let testimonials = select('.testimonial-container');
+  if (testimonials) {
+    let scrollAmount = 0;
+    const autoScroll = () => {
+      scrollAmount += testimonials.clientWidth;
+      if (scrollAmount >= testimonials.scrollWidth) {
+        scrollAmount = 0;
+      }
+      testimonials.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    };
+    setInterval(autoScroll, 20000);
+  }
+
+  /**
+   * Open Tab Function
+   */
+  function openTab(tabName) {
+    let tabs = document.getElementsByClassName("containerTab");
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
+    }
+    let tab = document.getElementById(tabName);
+    if (tab) tab.style.display = "block";
+  }
+
+  /**
+   * Counter Up
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.counter-add').forEach(counter => {
+      let start = 0;
+      let end = parseInt(counter.textContent);
+      let duration = 4000;
+      let increment = end / (duration / 10);
+
+      let counterInterval = setInterval(() => {
+        if (start < end) {
+          start += increment;
+          counter.textContent = Math.ceil(start);
+        } else {
+          counter.textContent = end;
+          clearInterval(counterInterval);
+        }
+      }, 10);
+    });
+  });
+
+
+/*-------------------
+		History Scroll
+	--------------------- */
+  $(".nice-scroll").niceScroll({
+    cursorcolor: "rgba(135, 196, 23, 0.3)",
+    cursorwidth: "6px",
+    background: "rgba(255, 255, 255, 0.1)",
+    cursorborder: "",
+    autohidemode: false,
+    horizrailenabled: false
+});
+
+
+
+  /**
+   * Amortization Calculator
+   */
+  document.getElementById('calculateBtn').addEventListener('click', function() {
+    const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly rate
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12; // Convert to months
+
+    if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+      alert("Please enter valid numbers.");
+      return;
+    }
+
+    // Calculate monthly payment
+    const monthlyPayment = calculateMonthlyPayment(loanAmount, interestRate, loanTerm);
+
+    // Generate amortization schedule
+    const schedule = generateAmortizationSchedule(loanAmount, interestRate, loanTerm, monthlyPayment);
+
+    // Update UI
+    document.getElementById('monthlyPayment').value = monthlyPayment.toFixed(2);
+    document.getElementById('totalInterest').value = (schedule.reduce((acc, entry) => acc + entry.interest, 0)).toFixed(2);
+
+    // Populate the amortization schedule table
+    let tableBody = document.getElementById('scheduleBody');
+    if (tableBody) {
+      tableBody.innerHTML = ''; // Clear previous entries
+      schedule.forEach(entry => {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+          ${entry.month}
+          $${entry.beginningBalance.toFixed(2)}
+          $${entry.interest.toFixed(2)}
+          $${entry.principal.toFixed(2)}
+          $${entry.endingBalance.toFixed(2)}
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+  });
+/**testimonial carousel */
+
+  /**   * Helper functions for Amortization   */
+  function calculateMonthlyPayment(principal, monthlyRate, months) {
+    return (monthlyRate * principal) / (1 - Math.pow(1 + monthlyRate, -months));
+  }
+
+  function generateAmortizationSchedule(principal, monthlyRate, months, monthlyPayment) {
+    let balance = principal;
+    let schedule = [];
+
+    for (let month = 1; month <= months; month++) {
+      let interest = balance * monthlyRate;
+      let principalPayment = monthlyPayment - interest;
+      balance -= principalPayment;
+
+      schedule.push({
+        month: month,
+        beginningBalance: balance + principalPayment,
+        interest: interest,
+        principal: principalPayment,
+        endingBalance: balance
+      });
+
+      // Handle rounding errors that might make balance negative or too small
+      if (balance < 0.01) {
+        balance = 0;
+        break;
+      }
+    }
+    return schedule;
+  }
+
+})();

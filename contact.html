@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -123,77 +123,105 @@
     </div>
     <!-- Breadcrumb Section End -->
 
-    <!-- Contact Begin -->
-    <div class="contact-information">
-      <style>
-        /* Contact Information */
-
-.contact-information {
-	margin-top: 140px;
-}
-
-.contact-information .contact-item {
-	padding: 60px 30px;
-	background-color: #f7f7f7;
-	text-align: center;
-}
-
-.contact-information .contact-item i {
-	color: #a4c639;
-	font-size: 48px;
-	margin-bottom: 40px;
-}
-
-.contact-information .contact-item h4 {
-	font-size: 20px;
-	font-weight: 700;
-	letter-spacing: 0.25px;
-	margin-bottom: 15px;
-}
-
-.contact-information .contact-item p {
-	margin-bottom: 20px;
-}
-
-.contact-information .contact-item a {
-	font-weight: 600;
-	color: #a4c639;
-	font-size: 15px;
-}
-      </style>
-      <div class="container">
+    <!--  Contact Section  -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">  
+        <div class="section-title"><h2>Contact Us</h2></div>  
         <div class="row">
-          <div class="col-md-4">
-            <div class="contact-item">
-              <i class="bx bxs-phone-outgoing"></i>
-              <h4>Phone</h4>
-              <p>We are just a phone call away...</p>
-              <a href="#">+254 720 615 062</a><br>
-              <a href="#">+254 732 615 062</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-item">
-              <i class="bx bxs-envelope"></i>
-              <h4>Email</h4>
-              <p>We are glad to hear from, just mail us...</p>
-              <a href="#">info@zoghorisacco.com</a>
-              <a href="#">support@zoghorisacco.com</a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-item">
-              <i class="bx bxs-map-pin"></i>
-              <h4>Location</h4>
-              <p>We are located on<br>Digo Road, Opposite GPO POSTA (HUDUMA CENTRE), MOMBASA.</p>
-              <a href="#">View on Google Maps</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Contact End -->
 
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="fa fa-map-marker"></i>
+                <h4>Location:</h4>
+                <p>Meru Road, Mombasa. <br> Behind Naivas Supermarket, Town Centre.</p>
+              </div>
+
+              <div class="email">              
+                <i class="fa fa-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@zoghorisacco.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="fa fa-phone"></i>
+                <h4>Call:</h4>
+                <p>+254 720 615 062</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!3m2!1sen!2ske!4v1739870268653!5m2!1sen!2ske!6m8!1m7!1sjMm6j1blwd6GKaOy4WV4hQ!2m2!1d-4.061990054494661!2d39.67226422987638!3f193.06755989930082!4f27.167513665445412!5f0.7820865974627469" width="490" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>  
+        </div>  
+      </div>
+    </section>
+    <!-- End Contact Section -->
+     <section class="branch">
+      <div class="container">
+          <div class="section-title"><h2>OUR NETWORK OF BRANCHES</h2></div>  
+          <div class="row">
+              <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                  <div class="disclaimer" id="mbranch">
+                      <h3>MOMBASA HQ OFFICES</h3>                       
+                       <i class="fa fa-map-marker"></i><p> MERU ROAD, BUILDING 1930, 1<sup>ST</sup> FLOOR.<br>MOMBASA CBD</p>
+                      <p><i class="fa fa-phone"></i>(+254) 720-615062 <br>(+254) 732-615062</p>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                  <div class="disclaimer" id="vbranch">
+                      <h3>VOI BRANCH</h3>                        
+                      <i class="fa fa-map-marker"></i><p>Located Opposite Shake Distributors, <br>VOI TOWN</p>
+                      <p><i class="fa fa-phone"></i>(+254) 797-005468 <br>(+254) 755-005468</p>
+                  </div>
+              </div>
+              
+              <div class="col-lg-3 col-md-4 mt-4 mt-lg-0" >
+                  <div class="disclaimer" id="mttbranch">                       
+                      <h3>MWATATE OFFICE</h3>
+                       <i class="fa fa-map-marker"></i><p>ZOGHORI SACCO COMPLEX BUIDLING,<br>MWATATE TOWN</p>
+                       <p><i class="fa fa-phone"></i>(+254) 768-748649 <br>(+254) 739-675587</p>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4 mt-lg-0" >
+                  <div class="disclaimer" id="wbranch">                       
+                      <h3>WUNDANYI BRANCH</h3>
+                       <i class="fa fa-map-marker"></i><p>WUNDANYI MATATU STAGE, <br>WUNDANYI TOWN</p>
+                       <p><i class="fa fa-phone"></i>(+254) 738-534821</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+     </section>
+ 
     <!--  Footer  -->
     <footer id="footer">
         <div class="footer-newsletter">

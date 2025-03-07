@@ -176,7 +176,7 @@
 
     <hr class="bg-info">
 
-</section>
+
 </main>
 
 <form id="regForm" action="forms/register.php" method="post" autocomplete="on">
@@ -185,7 +185,8 @@
     </div>
 
     <div class="tab disclaimer">
-        <p><strong>Please complete this form in CAPITAL LETTERS. All fields marked with an Asterisk (*) are MANDATORY. I hereby make an application for membership and agree to conform to the Society's bylaws and amendments thereof.</strong></p>
+       <strong>Please complete this form in CAPITAL LETTERS. All fields marked with an Asterisk (*) are MANDATORY. </strong>
+        <p>I hereby make an application for membership and agree to conform to the Society's bylaws and amendments thereof.</p>
         <h3 class="card-header text-black">Personal Details</h3>
         <div class="user-details">
             <div class="row">
@@ -318,7 +319,7 @@
                     <input type="text" name="residential" placeholder="Enter exact place of residence" oninput="this.className = ''">
                 </div>
 
-                <div class="ContributionForm">
+                <!--<div class="ContributionForm">
                     <div class="ContributionAmount">
                         <label for="ContributionFigures">Proposed Monthly Contribution (Figures):</label>
                         <input type="number" id="ContributionFigures" name="ContributionFigures" placeholder="e.g., 2000" required>
@@ -327,6 +328,66 @@
                         <label for="ContributionWords">Proposed Monthly Contribution (Words):</label>
                         <input type="text" id="ContributionWords" name="ContributionWords" placeholder="e.g., Two Thousand" required>
                     </div>
+                </div>-->
+
+                <div class="ContributionForm">
+                    <div class="ContributionAmount">
+                        <label for="ContributionFigures">Proposed Monthly Contribution (Figures):</label>
+                        <input type="number" id="ContributionFigures" name="ContributionFigures" placeholder="e.g., 2000" min="0" required>
+                    </div>
+                    <div class="ContributionAmount">
+                        <label for="ContributionWords">Proposed Monthly Contribution (Words):</label>
+                        <input type="text" id="ContributionWords" name="ContributionWords" placeholder="e.g., Two Thousand" readonly>
+                    </div>
+                
+            
+                <!-- Bootstrap JS (optional, included for consistency)
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+                <script>
+                    // Number to words conversion function
+                    function numberToWords(num) {
+                        if (!num || num < 0) return "";
+            
+                        const units = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+                        const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+                        const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+                        const thousands = ["", "Thousand", "Million", "Billion"];
+            
+                        function convertLessThanThousand(n) {
+                            if (n === 0) return "";
+                            if (n < 10) return units[n];
+                            if (n < 20) return teens[n - 10];
+                            if (n < 100) {
+                                return tens[Math.floor(n / 10)] + (n % 10 ? " " + units[n % 10] : "");
+                            }
+                            return units[Math.floor(n / 100)] + " Hundred" + (n % 100 ? " " + convertLessThanThousand(n % 100) : "");
+                        }
+            
+                        if (num === 0) return "Zero";
+            
+                        let result = "";
+                        let scale = 0;
+            
+                        while (num > 0) {
+                            const chunk = num % 1000;
+                            if (chunk) {
+                                const chunkInWords = convertLessThanThousand(chunk);
+                                result = chunkInWords + (thousands[scale] ? " " + thousands[scale] : "") + (result ? " " + result : "");
+                            }
+                            num = Math.floor(num / 1000);
+                            scale++;
+                        }
+            
+                        return result.trim();
+                    }
+            
+                    // Event listener for input
+                    document.getElementById("ContributionFigures").addEventListener("input", function() {
+                        const num = parseInt(this.value, 10);
+                        const words = numberToWords(num);
+                        document.getElementById("ContributionWords").value = words || "";
+                    });
+                </script>
                 </div>
 
                 <div class="remittance-options pt-4 pb-2">
@@ -441,7 +502,7 @@
             </div>
         </div>
     
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
         <script>
             $(document).ready(function() {
                 $('#employmentType').change(function() {
@@ -495,7 +556,7 @@
             </div>
         </div>
         <button type="button" class="btn btn-primary" id="addField">Add New Field</button>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
         <script>
             $(document).ready(function() {
                 var max_fields = 10;

@@ -48,7 +48,7 @@
    <!-- Top Bar -->
 <section id="topbar" class="d-flex align-items-center">
     <div class="container d-none d-md-flex align-items-center">
-        <p class="fa-beat">MON - FRI: 8:00AM - 5:00PM | SAT 8:00AM - 1:00PM</p>
+        <p>MON - FRI: 8:00AM - 5:00PM | SAT 8:00AM - 1:00PM</p>
     </div>
 
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -70,9 +70,10 @@
 </section>
 
     <!-- -Header --->
-    <header id="header" class="d-flex align-items-center">
+    <header id="header">
         <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo"><a href="index.html"><img src="assets/img/logoz.png" style="height: auto;width: 100%;" class="img-fluid"></a></div>
+            <!--<div class="logo"><a href="index.html"><img src="assets/img/logoz.png" style="height: auto;width: 100%;" class="img-fluid"></a></div>-->
+            <a href="index.html" class="logo"><img src="assets/img/logoz.png" alt="" class="img-fluid"></a>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="active" href="index.html">Home</a></li>
@@ -82,23 +83,24 @@
                             <li><a href="about.html">Who We Are</a></li>                            
                             <li><a href="directors.html">Board of Directors</a></li>
                             <li><a href="management.html">Sacco Management</a></li>
+                            <li><a href="loanproducts.html" class="btn btn-primary rounded-pill"><strong>Our Products</strong></a></li>  
                         </ul>
                     </li>
                     <li><a href="e-banking.html">Digital Banking</a></li>
                     <li><a href="downloads.html"><span>Downloads</span></a></li>
                     <li class="dropdown"><a href="#"><span>Info Centre</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>                                   
+                        <ul>
+                            <li><a href="https://qsacco.coretec.co.ke:7075/Account/Register/">M-Portal</a></li>
+                            <li><a href="https://zoghorifoundation.github.io/">Zoghori Foundation</a></li>                                  
                             <li><a href="careers.html">Career and Vacancies</a></li>
                             <li><a href="tenders.html">Tenders</a></li>
                             <li><a href="soko.hmtl">Market Place</a></li>
                             <li><a href="news.html">News</a></li>        
                             <li><a href="faqs.html">F.A.Qs</a></li>
                         </ul>
-                    </li>
-                    <li><a href="membership.html">Membership</a></li>
+                    </li>                               
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="https://qsacco.coretec.co.ke:7075/Account/Register/">Member Portal</a></li>
-                    <li><a href="https://zoghorifoundation.github.io/">Zoghori Foundation</a></li>
+                    <li><a class="getstarted scrollto" href="membership.html">JOIN US</a></li>               
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -539,14 +541,47 @@
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
-            </div>
-  
-          </div>
-  
+            </div>  
+          </div>  
         </div>
       </section>
       <!-- End Contact Section -->
-
+       <section class="branch">
+        <div class="container">
+            <div class="section-title"><h2>OUR NETWORK OF BRANCHES</h2></div>  
+            <div class="row">
+                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                    <div class="disclaimer" id="mbranch">
+                        <h3>MOMBASA HQ OFFICES</h3>                       
+                         <i class="fa fa-map-marker"></i><p> MERU ROAD, BUILDING 1930, 1<sup>ST</sup>FLOOR.<br>MOMBASA CBD</p>
+                        <p><i class="fa fa-phone"></i>(+254) 720-615062 <br>(+254) 732-615062</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+                    <div class="disclaimer" id="vbranch">
+                        <h3>VOI BRANCH</h3>                        
+                        <i class="fa fa-map-marker"></i><p>Located Opposite Shake Distributors, <br>VOI TOWN</p>
+                        <p><i class="fa fa-phone"></i>(+254) 797-005468 <br>(+254) 755-005468</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0" >
+                    <div class="disclaimer" id="mttbranch">                       
+                        <h3>MWATATE OFFICE</h3>
+                         <i class="fa fa-map-marker"></i><p>ZOGHORI SACCO COMPLEX BUIDLING,<br>MWATATE TOWN</p>
+                         <p><i class="fa fa-phone"></i>(+254) 768-748649 <br>(+254) 739-675587</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0" >
+                    <div class="disclaimer" id="wbranch">                       
+                        <h3>WUNDANYI BRANCH</h3>
+                         <i class="fa fa-map-marker"></i><p>WUNDANYI MATATU STAGE, <br>WUNDANYI TOWN</p>
+                         <p><i class="fa fa-phone"></i>(+254) 738-534821</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
     <!--  Footer  -->
   <footer id="footer">
     <div class="footer-newsletter">
@@ -605,6 +640,7 @@
             <h4>Contact Us</h4>
             <p>
                 Meru Road <br>
+                Building 1930<br>
                 Mombasa County<br>
                 Kenya <br><br>
                 <strong>Phone:</strong> +254 720 615 062<br>

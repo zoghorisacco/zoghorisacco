@@ -602,7 +602,7 @@ table img:hover{
     background-color: #f9f9f9; 
     font-size: 14px; 
     color: #333; */
-
+    color: #000;
     background: rgba(255, 255, 255, 0.2); 
     border-radius: 10px; 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
@@ -612,6 +612,15 @@ table img:hover{
      padding: 20px; 
      width: 100%; 
      text-align: center;
+}
+
+#regForm .disclaimer{
+    color: #000;
+    border: 2px solid;
+    border-image-source: linear-gradient(to right, #a76e0adc, #FFFF00, #0000ea, #fff);
+    border-image-slice: 1;
+    padding: 20px; 
+
 }
 
 .branch .disclaimer{
@@ -673,6 +682,26 @@ sup{
 .branch sup{
     color: #000;
     font-size: 12px;
+}
+/**next of kin validation**/
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 0.25em;
+}
+.form-group.invalid .form-control {
+    border-color: red;
+}
+.kin-fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.remove-field {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 /* Request Form */
 
@@ -790,7 +819,7 @@ sup{
         margin-bottom: 20px;
         padding-bottom: 20px;
         position: relative;
-        color: #2c4964;
+        color: #000;
     }
     
     .section-title h2::before {
@@ -1334,23 +1363,6 @@ sup{
     color: var(--bs-secondary);
 }
 
-/*#savingsproducts .service-item
-{
-    background: rgba(255, 255, 255, 0.2); 
-    border-radius: 10px; 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    padding: 20px; 
-    width: 100%; 
-    text-align: center;
-}
-
-#savingsproducts .mb-4{
-    text-align: justify;
-
-}*/
 .service-content-inner .disclaimer p, li{
     text-align: justify;
 }
@@ -1373,7 +1385,7 @@ sup{
 
 
 /*** Section Title Start ***/
-.section-title {
+.service .section-title {
     /*max-width: 900px;*/
     text-align: center;
     margin: 0 auto;
@@ -3042,12 +3054,14 @@ background-color: #e90f0f;
 display: none;
 }
 /* Make circles that indicate the steps of the form: */
-
+ .card-header{
+    background: #ff910098;
+ }
 #regForm .step {
 height: 15px;
 width: 15px;
 margin: 0 2px;
-background-color: #bbbbbb;
+background-color: #ffe600;
 border: none;
 border-radius: 50%;
 display: inline-block;
@@ -3109,20 +3123,16 @@ background-color: #04AA6D;
     appearance: none; /* Removes default dropdown arrow in some browsers */
     -webkit-appearance: none; /* For Webkit browsers */
     -moz-appearance: none; /* For Firefox */
-    /*background-image: url('data:image/svg+xml;utf8,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;*/
     cursor: pointer;
 }
 
 #regForm select:hover {
-    border-color: #9ecaed;
+    border-color: #2200ff;
 }
 
 #regForm select:focus {
     outline: none;
-    border-color: #66afe9;
+    border-color: #0004ff;
     box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
 }
 
@@ -3242,12 +3252,12 @@ label {
     text-decoration: none;
     cursor: pointer;
   }
-  .ContributionForm {
+  /*.ContributionForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
+*/
 .ContributionAmount {
     display: flex;
     flex-direction: column;
@@ -3294,14 +3304,52 @@ label {
     color: #999;
     cursor: not-allowed;
 }
-
 .signature-section {
-    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .signature-canvas {
-    border: 1px solid #ccc;
-    cursor: crosshair;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.upload-signature {
+    margin-bottom: 1rem;
+}
+
+.upload-signature label {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+    margin-left: 0.5rem;
+}
+
+.upload-signature input[type="file"] {
+    display: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+}
+
+.signature-section button {
+    margin-right: 0.5rem;
+}
+
+.signature-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.signature-section p {
+    margin-bottom: 1rem;
 }
 
 #clearSignature, #saveSignature {
@@ -3314,11 +3362,121 @@ label {
 .validation-messages {
     margin-top: 10px;
 }
-
+/*
 .error-message {
     color: red;
+}*/
+/* Custom styles for the referee section */
+#referee .tab.referee {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+#referee .referee h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+#referee .form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+#referee .form-group input[type="text"] {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s ease;
+}
+
+#referee .form-group input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#referee .terms-checkbox {
+    margin-top: 1.5rem;
+}
+/*
+#referee .disclaimer {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+*/
+#referee .disclaimer h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#referee .disclaimer p {
+    font-size: 0.875em;
+    color: #000;
+}
+
+#referee .form-check-label {
+    font-size: 0.9rem;
+}
+
+#referee .form-check-label a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+#referee .form-check-label a:hover {
+    color: #0056b3;
+}
+
+/* Modal styling */
+#referee .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+#referee .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 0.25rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#referee .modal-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+#referee .modal-content p {
+    font-size: 0.9rem;
+}
+
+#referee .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#referee .close:hover {
+    color: #000;
+    opacity: 0.75;
+}
 
 /*--------credit-product Section----------*/
 
@@ -3379,7 +3537,7 @@ label {
     margin-left: -10px;
     padding: 8px 26px 8px 26px;
     color: #fff;
-    background: #584b48;
+    background: #3002fc;
     border-radius: 0 50px 50px 0;
     position: relative;
     z-index: 4;
